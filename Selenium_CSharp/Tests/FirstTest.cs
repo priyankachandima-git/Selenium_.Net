@@ -1,15 +1,18 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace Selenium_CSharp
 {
     public class FirstTest : BaseUtil
     {
         [Test]
-        public void FirstTestCase()
+        [Description("As a user I should be able to access TODOS application")]
+        public void Navigate_to_TODOS_application()
         {
-            Console.WriteLine("First Test");
+            I.Open(todoAppFrontPage.Url);
+            I.AmOn(todoAppFrontPage.Identifier);
         }
     }
 }
